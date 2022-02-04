@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
 
 class Header extends Component {
@@ -29,22 +28,22 @@ class Header extends Component {
     const nav = (
       <nav>
         <h2 data-testid="header-user-name">{`Olá ${user.name}`}</h2>
-        <Link to="/profile">Perfil</Link>
+        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
         <hr />
         <Link to="/profile/edit">Editar Perfil</Link>
         <hr />
-        <Link to="/search">Search</Link>
+        <Link to="/search" data-testid="link-to-search">Search</Link>
         <hr />
         <Link to="/album/:id">Álbum</Link>
         <hr />
-        <Link to="/favorites">Favoritos</Link>
+        <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
         <hr />
       </nav>
     );
-
+    const loadingElement = <h2>Carregando...</h2>;
     return (
       <header data-testid="header-component">
-        { loading ? <Loading /> : nav }
+        { loading ? loadingElement : nav }
       </header>
     );
   }

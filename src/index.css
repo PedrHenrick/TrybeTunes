@@ -13,7 +13,11 @@ code {
 }
 
 .loading {
+  text-align: center;
   align-items: center;
   display: flex;
   justify-content: center;
+  height: 40vw;
+  font-style: italic;
+  color: seagreen;
 }

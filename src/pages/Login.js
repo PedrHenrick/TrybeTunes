@@ -45,13 +45,14 @@ class Login extends Component {
       redirect,
     } = this.state;
     const form = (
-      <form>
+      <form className="form">
         <h1>Login</h1>
         <label htmlFor="Nome">
-          Nome
+          { 'Nome: '}
           <input
             type="text"
             name="Nome"
+            placeholder="Coloque seu nome"
             data-testid="login-name-input"
             value={ Nome }
             onChange={ this.onInputChange }
@@ -68,7 +69,7 @@ class Login extends Component {
       </form>
     );
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="FormLoginConteiner">
         { loading ? <Loading /> : form }
         { redirect && <Redirect to="/search" />}
       </div>
