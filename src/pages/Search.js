@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 class Search extends Component {
   constructor() {
@@ -43,6 +43,7 @@ class Search extends Component {
     const { valueAlbum, band, albums } = this.state;
     const successResult = <h2>{`Resultado de álbuns de: ${band}`}</h2>;
     const failResult = <h2>Nenhum álbum foi encontrado</h2>;
+
     return (
       <div>
         { valueAlbum ? successResult : failResult }

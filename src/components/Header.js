@@ -34,8 +34,6 @@ class Header extends Component {
         <hr />
         <Link to="/search" data-testid="link-to-search">Search</Link>
         <hr />
-        <Link to="/album/:id">Álbum</Link>
-        <hr />
         <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
         <hr />
       </nav>

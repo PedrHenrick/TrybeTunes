@@ -13,10 +13,12 @@
 
 .Albums {
   border: black 1px solid;
-  display: inline-block;
+  display: inline-table;
   margin-left: 10px;
   margin-right: 10px;
   max-width: 200px;
   min-width: 200px;
+  max-height: 400px;
+  min-height: 400px;
   text-align: center;
 }
