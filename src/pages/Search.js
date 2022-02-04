@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-// import { Route, Switch } from 'react-router-dom';
 
 class Search extends Component {
   render() {

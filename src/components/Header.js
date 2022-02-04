@@ -29,15 +29,15 @@ class Header extends Component {
     const nav = (
       <nav>
         <h2 data-testid="header-user-name">{`Olá ${user.name}`}</h2>
-        <Link to="./profile">Perfil</Link>
+        <Link to="/profile">Perfil</Link>
         <hr />
-        <Link to="./profile/edit">Editar Perfil</Link>
+        <Link to="/profile/edit">Editar Perfil</Link>
         <hr />
-        <Link to="./search">Search</Link>
+        <Link to="/search">Search</Link>
         <hr />
-        <Link to="./album/:id">Álbum</Link>
+        <Link to="/album/:id">Álbum</Link>
         <hr />
-        <Link to="./favorites">Favoritos</Link>
+        <Link to="/favorites">Favoritos</Link>
         <hr />
       </nav>
     );
