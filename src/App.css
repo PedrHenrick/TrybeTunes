@@ -1,15 +1,12 @@
 .FormLoginConteiner {
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 40vw;
+  align-items: center;
+  display: flex;
+  height: 40vw;
+  justify-content: center;
+  text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-}
-
-header {
 }
