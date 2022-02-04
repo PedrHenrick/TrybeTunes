@@ -27,8 +27,7 @@ class Login extends Component {
   };
 
   onSaveName = async () => {
-    const { Nome, loading } = this.state;
-    console.log(loading, '1');
+    const { Nome } = this.state;
     this.setState({
       loading: true,
     });

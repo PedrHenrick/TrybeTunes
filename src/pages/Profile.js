@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import ProfileEdit from './ProfileEdit';
+// import { Route } from 'react-router-dom';
+import Header from '../components/Header';
+// import ProfileEdit from './ProfileEdit';
 
 class Profile extends Component {
   render() {
     return (
       <div data-testid="page-profile">
-        <h1>Profile</h1>
-        <Route path="/profile/edit">
-          <ProfileEdit />
-        </Route>
+        <Header />
       </div>
     );
   }
