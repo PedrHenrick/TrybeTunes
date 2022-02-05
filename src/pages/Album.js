@@ -17,12 +17,11 @@ class Album extends Component {
   }
 
   componentDidMount() {
-    const { match } = this.props;
-    const { id } = match.params;
-    this.musics(id);
+    const { match: { params: { id } } } = this.props;
+    this.requestMusicAPI(id);
   }
 
-  musics = async (id) => {
+  requestMusicAPI = async (id) => {
     const album = await musicsAPI(id);
     const colection = album[0];
     const songs = album.filter((_song, index) => index !== 0);
@@ -43,7 +42,9 @@ class Album extends Component {
           <MusicCard
             nome={ song.trackName }
             value={ song.previewUrl }
+            id={ song.trackId }
             key={ song.trackId }
+            som={ song }
           />
         )) }
       </section>
@@ -65,6 +66,9 @@ class Album extends Component {
 export default Album;
 
 Album.propTypes = {
-  match: PropTypes.objectOf(PropTypes.object).isRequired,
-  id: PropTypes.string.isRequired,
+  match: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.bool,
+  ]).isRequired,
 };
