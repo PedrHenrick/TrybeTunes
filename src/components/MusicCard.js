@@ -1,35 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: false,
-      check: false,
-    };
-  }
-
-  addFavorites = async () => {
-    const { check } = this.state;
-    const { id } = this.props;
-
-    if (!check) {
-      this.setState({ loading: true, check: true });
-      await addSong(id);
-      this.setState({ loading: false });
-    } else this.setState({ check: false });
-  }
-
   render() {
-    const { loading, check } = this.state;
-    const { nome, value, id } = this.props;
-    const loadingElement = <h2>Carregando...</h2>;
+    const { trackName, previewUrl, trackId, addFavorites, checked } = this.props;
     return (
       <div>
-        <h3>{ nome }</h3>
-        <audio data-testid="audio-component" src={ value } controls>
+        <h3>{ trackName }</h3>
+        <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
           <code> audio </code>
@@ -39,12 +17,12 @@ class MusicCard extends Component {
           Favorita
           <input
             type="checkbox"
-            data-testid={ `checkbox-music-${id}` }
-            checked={ check }
-            onChange={ this.addFavorites }
+            name="songFav"
+            data-testid={ `checkbox-music-${trackId}` }
+            checked={ checked }
+            onChange={ () => addFavorites(this.props) }
           />
         </label>
-        { loading ? loadingElement : null }
       </div>
     );
   }
@@ -53,7 +31,9 @@ class MusicCard extends Component {
 export default MusicCard;
 
 MusicCard.propTypes = {
-  nome: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  trackName: PropTypes.string.isRequired,
+  previewUrl: PropTypes.string.isRequired,
+  trackId: PropTypes.number.isRequired,
+  addFavorites: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired,
 };
