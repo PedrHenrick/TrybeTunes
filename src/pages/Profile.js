@@ -18,25 +18,6 @@ class Profile extends Component {
     this.setState({ loading: false, userObj });
   }
 
-  // renderPage = () => {
-  //   const { userObj } = this.state;
-  //   return (
-  //     <div>
-  //       <img src={ userObj.image } alt={ userObj.name } data-testid="profile-image" />
-  //       <h3>{ userObj.name }</h3>
-  //       <p>{ `Email: ${userObj.email}` }</p>
-  //       <p>{ `Descrição: ${userObj.description}` }</p>
-  //       <Link to="/profile/edit">
-  //         <button
-  //           type="button"
-  //         >
-  //           Editar perfil
-  //         </button>
-  //       </Link>
-  //     </div>
-  //   );
-  // }
-
   renderPage = () => {
     const { userObj } = this.state;
     return (
