@@ -13,11 +13,11 @@ class MusicCard extends Component {
           <code> audio </code>
           .
         </audio>
-        <label htmlFor="check">
+        <label htmlFor={ trackId }>
           Favorita
           <input
             type="checkbox"
-            name="songFav"
+            id={ trackId }
             data-testid={ `checkbox-music-${trackId}` }
             checked={ checked }
             onChange={ () => checkTheCheck(this.props) }

@@ -38,6 +38,7 @@ class Header extends Component {
         <hr />
       </nav>
     );
+
     const loadingElement = <h2>Carregando...</h2>;
     return (
       <header data-testid="header-component">

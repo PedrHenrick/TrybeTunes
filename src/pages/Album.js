@@ -22,7 +22,7 @@ class Album extends Component {
     const { match: { params: { id } } } = this.props;
 
     const favs = await getFavoriteSongs();
-    this.setStates(favs);
+    this.setState({ songFav: favs });
 
     const album = await getMusics(id);
     const colection = album[0];
@@ -32,15 +32,6 @@ class Album extends Component {
       music: songs,
       loading: false,
     });
-  }
-
-  async componentDidUpdate() {
-    const favs = await getFavoriteSongs();
-    this.setStates(favs);
-  }
-
-  setStates = (favs) => {
-    this.setState({ songFav: favs });
   }
 
   checkTheCheck = async (song) => {
@@ -54,7 +45,9 @@ class Album extends Component {
     } else {
       this.setState({ loading: true });
       await removeSong(song);
-      this.setState({ loading: false });
+
+      const favs = await getFavoriteSongs();
+      this.setState({ loading: false, songFav: favs });
     }
   }
 
@@ -66,10 +59,12 @@ class Album extends Component {
         <h3 data-testid="album-name">{ album.collectionName }</h3>
         { music.map((song) => (
           <MusicCard
-            { ...song }
+            trackName={ song.trackName }
+            previewUrl={ song.previewUrl }
+            trackId={ parseInt(song.trackId, 10) }
             checked={ songFav.some((favorite) => favorite.trackId === song.trackId) }
             checkTheCheck={ this.checkTheCheck }
-            key={ song.trackId }
+            key={ parseInt(song.trackId, 10) }
           />
         ))}
       </section>
