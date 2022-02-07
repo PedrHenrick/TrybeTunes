@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class Album extends Component {
     const { match: { params: { id } } } = this.props;
 
     const favs = await getFavoriteSongs();
-    this.setState({ songFav: favs });
+    this.setStates(favs);
 
     const album = await getMusics(id);
     const colection = album[0];
@@ -34,14 +34,28 @@ class Album extends Component {
     });
   }
 
-  addFavorites = async (song) => {
-    // const { songFav } = this.state;
-    this.setState((state) => ({
-      loading: true,
-      songFav: [...state.songFav, song],
-    }));
-    await addSong(song);
-    this.setState({ loading: false });
+  async componentDidUpdate() {
+    const favs = await getFavoriteSongs();
+    this.setStates(favs);
+  }
+
+  setStates = (favs) => {
+    this.setState({ songFav: favs });
+  }
+
+  checkTheCheck = async (song) => {
+    if (!song.checked) {
+      this.setState((state) => ({
+        loading: true,
+        songFav: [...state.songFav, song],
+      }));
+      await addSong(song);
+      this.setState({ loading: false });
+    } else {
+      this.setState({ loading: true });
+      await removeSong(song);
+      this.setState({ loading: false });
+    }
   }
 
   renderPage = () => {
@@ -54,7 +68,7 @@ class Album extends Component {
           <MusicCard
             { ...song }
             checked={ songFav.some((favorite) => favorite.trackId === song.trackId) }
-            addFavorites={ this.addFavorites }
+            checkTheCheck={ this.checkTheCheck }
             key={ song.trackId }
           />
         ))}
