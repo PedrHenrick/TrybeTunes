@@ -27,7 +27,7 @@ class Header extends Component {
     const { user, loading } = this.state;
     const nav = (
       <nav>
-        <h2 data-testid="header-user-name">{`Olá ${user.name}`}</h2>
+        <h2 data-testid="header-user-name">{ user.name }</h2>
         <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
         <hr />
         <Link to="/profile/edit">Editar Perfil</Link>
