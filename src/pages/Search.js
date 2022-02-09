@@ -41,34 +41,42 @@ class Search extends Component {
 
   renderAlbum = () => {
     const { valueAlbum, band, albums } = this.state;
-    const successResult = <h2>{`Resultado de álbuns de: ${band}`}</h2>;
-    const failResult = <h2>Nenhum álbum foi encontrado</h2>;
+    const successResult = (
+      <h2
+        className="messengerResult"
+      >
+        { 'Resultado de álbuns de: ' }
+        <span className="Result">{ band }</span>
+      </h2>
+    );
+    const failResult = <h2 className="messengerResult">Nenhum álbum foi encontrado</h2>;
 
     return (
       <div>
         { valueAlbum ? successResult : failResult }
-        { albums.map((album) => {
-          const keyy = album.collectionId;
-          return (
-            <Link
-              to={ `/album/${keyy}` }
-              key={ keyy }
-              data-testid={ `link-to-album-${keyy}` }
-            >
-              <div key={ keyy } className="Albums">
-                <img
-                  src={ album.artworkUrl100 }
-                  alt={ `Imagem do disco ${album.collectionName}` }
-                  width="120px"
-                />
-                <h4>{`Banda: ${album.artistName}`}</h4>
-                <h4>{`Álbum: ${album.collectionName}`}</h4>
-                <p>{`Quantidade de músicas: ${album.trackCount}`}</p>
-                <p>{`Valor: ${album.collectionPrice} `}</p>
-              </div>
-            </Link>
-          );
-        }) }
+        <section className="AlbumsList">
+          { albums.map((album) => {
+            const keyy = album.collectionId;
+            return (
+              <Link
+                to={ `/album/${keyy}` }
+                key={ keyy }
+                className="albumCard"
+                data-testid={ `link-to-album-${keyy}` }
+              >
+                <div key={ keyy } className="Albums">
+                  <img
+                    src={ album.artworkUrl100 }
+                    alt={ `Imagem do disco ${album.collectionName}` }
+                    width="120px"
+                  />
+                  <h4>{ album.artistName }</h4>
+                  <h4>{ album.collectionName }</h4>
+                </div>
+              </Link>
+            );
+          }) }
+        </section>
       </div>
     );
   }
@@ -90,17 +98,17 @@ class Search extends Component {
       disable,
     } = this.state;
     return (
-      <form>
-        <label htmlFor="search">
-          <input
-            type="text"
-            name="search"
-            data-testid="search-artist-input"
-            placeholder="Qual banda dejesa buscar?"
-            value={ search }
-            onChange={ this.onInputChange }
-          />
-        </label>
+      <form className="formSearch">
+        <input
+          className="inputSearch"
+          type="text"
+          name="search"
+          data-testid="search-artist-input"
+          placeholder="O que deseja ouvir?"
+          value={ search }
+          onChange={ this.onInputChange }
+          autoComplete="off"
+        />
         <button
           type="button"
           data-testid="search-artist-button"

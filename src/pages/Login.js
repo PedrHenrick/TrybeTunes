@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import TrybeTunes from '../img/trybetunesLogo';
 
 class Login extends Component {
   constructor() {
@@ -31,7 +32,7 @@ class Login extends Component {
     this.setState({
       loading: true,
     });
-    await createUser({ name: Nome });
+    await createUser({ name: Nome, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdgMV-kKC7wzAZIQeQMZpPua6hjPLNQisgyaVyuyy2SXT9Qu2j56NwUaCNCe7zz6G-YdY&usqp=CAU ' });
     this.setState({
       redirect: true,
     });
@@ -46,18 +47,25 @@ class Login extends Component {
     } = this.state;
     const form = (
       <form className="form">
-        <h1>Login</h1>
-        <label htmlFor="Nome">
-          { 'Nome: '}
-          <input
-            type="text"
-            name="Nome"
-            placeholder="Coloque seu nome"
-            data-testid="login-name-input"
-            value={ Nome }
-            onChange={ this.onInputChange }
-          />
-        </label>
+        <img
+          src={ TrybeTunes }
+          className="logoTrybetunes"
+          alt="Logo TrybeTunes"
+        />
+        <div className="input-container">
+          <label htmlFor="Nome">
+            <input
+              type="text"
+              required
+              name="Nome"
+              placeholder="Adicione seu nome"
+              data-testid="login-name-input"
+              value={ Nome }
+              onChange={ this.onInputChange }
+              autoComplete="off"
+            />
+          </label>
+        </div>
         <button
           type="button"
           data-testid="login-submit-button"

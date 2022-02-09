@@ -7,7 +7,10 @@ import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';
-import './App.css';
+import './Styles/Header.css';
+import './Styles/Search.css';
+import './Styles/Login.css';
+import './Styles/Album.css';
 
 class App extends React.Component {
   render() {

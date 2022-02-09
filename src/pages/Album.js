@@ -53,8 +53,13 @@ class Album extends Component {
 
   renderPage = () => {
     const { album, music, songFav } = this.state;
+    console.log(album);
     return (
       <section>
+        <img
+          src={ album.artworkUrl100 }
+          alt={ `Foto do album ${album.collectionName}` }
+        />
         <h3 data-testid="artist-name">{ album.artistName }</h3>
         <h3 data-testid="album-name">{ album.collectionName }</h3>
         { music.map((song) => (

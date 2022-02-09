@@ -1,0 +1,121 @@
+header {
+  background-color: #262626;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-items: baseline;
+  max-height: 102px;
+  min-height: 102px;
+  width: 100%;
+}
+
+.headerTop {
+  display: flex;
+  width: 100vw;
+  padding-bottom: 10px;
+}
+
+.headerBottom {
+  border-top: 2px solid #666665;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25.9px;
+  width: 33.33%;
+  border-right: 2px solid #666665;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25.9px;
+  width: 33.33%;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+}
+
+.rigth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  height: 25.9px;
+  border-left: 2px solid #666665;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+}
+
+.rigth:hover, .left:hover, .center:hover {
+  color: #06ee89
+}
+
+.userImage {
+  border-radius: 100%;
+}
+
+.nameImage {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #06ee89;
+  border-radius: 10px;
+  color: white;
+  padding: 2px;
+}
+
+.descriptionHeader {
+  margin: 0;
+}
+
+.userNameHeader {
+  text-align: center;
+  margin: 0;
+  margin-left: 5px;
+  padding: 3px;
+}
+
+.divUserNameHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  
+}
+
+.DivlogoTrybetunesHeader {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.loadingConst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  max-height: 102px;
+  min-height: 102px;
+  width: 100%;
+  border-bottom: #313131 30px;
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+}

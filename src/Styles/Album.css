@@ -1,0 +1,33 @@
+.messengerResult {
+  color: #06ee89;
+}
+
+.Result {
+  color: white;
+}
+
+.AlbumsList {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto 13px;
+}
+
+.albumCard{
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 15px 0;
+  width: 240px;
+  background-color: #262626;
+}
+
+.albumCard:hover {
+  padding: 5px;
+  box-shadow: 0px 0px 5px 5px #06ee89;
+}

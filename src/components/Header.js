@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
+import TrybeTunes from '../img/trybetunesLogo';
 
 class Header extends Component {
   constructor() {
@@ -27,19 +28,45 @@ class Header extends Component {
     const { user, loading } = this.state;
     const nav = (
       <nav>
-        <h2 data-testid="header-user-name">{ user.name }</h2>
-        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
-        <hr />
-        <Link to="/profile/edit">Editar Perfil</Link>
-        <hr />
-        <Link to="/search" data-testid="link-to-search">Search</Link>
-        <hr />
-        <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
-        <hr />
+        <section className="headerTop">
+          <div className="DivlogoTrybetunesHeader">
+            <img
+              src={ TrybeTunes }
+              className="logoTrybetunesHeader"
+              alt="Logo TrybeTunes"
+            />
+          </div>
+          <div className="divUserNameHeader">
+            <section className="nameImage">
+              <img src={ user.image } alt="Foto do usuário" className="userImage" />
+              <h2
+                className="userNameHeader"
+                data-testid="header-user-name"
+              >
+                { user.name }
+              </h2>
+              <p> 🟢 online </p>
+            </section>
+          </div>
+        </section>
+        <section className="headerBottom">
+          <Link to="/profile" className="left" data-testid="link-to-profile">Perfil</Link>
+
+          <Link to="/search" className="center" data-testid="link-to-search">Search</Link>
+
+          <Link
+            to="/favorites"
+            className="rigth"
+            data-testid="link-to-favorites"
+          >
+            Favoritos
+          </Link>
+
+        </section>
       </nav>
     );
 
-    const loadingElement = <h2>Carregando...</h2>;
+    const loadingElement = <h2 className="loadingConst">Carregando...</h2>;
     return (
       <header data-testid="header-component">
         { loading ? loadingElement : nav }

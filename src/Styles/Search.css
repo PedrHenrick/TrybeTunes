@@ -1,0 +1,27 @@
+.formSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20vw;
+}
+
+.inputSearch {
+  width: 400px;
+  height: 40px;
+  margin: 10px;
+}
+
+.inputSearch {
+  border: none;
+  border-bottom: 1px solid #06ee89;  
+  background: transparent;
+  font-size: 30px;
+  color: white;
+}
+
+.inputSearch:focus {
+  border:none;	
+  outline:none;
+  border-bottom:1px solid #06ee89;	
+}
