@@ -2,64 +2,66 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  text-align: center;
   margin: 60px;
   margin-top: 100px;
+  text-align: center;
 }
 
 .form {
-  height: 400px;
-  width: 300px;
+  align-items: center;
+  background-color: #262626;
   border-radius: 10px;
   box-shadow: 1px 1px 7px 7px #06ee89;
-  background-color: #262626;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items: center;
+  height: 400px;
+  justify-content: center;
+  width: 300px;
 }
 
-.input-container input{ 
-  border: none;
-  border-bottom: 1px solid #06ee89;  
+.input-container input {
   background: transparent;
-  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #06ee89;
   color: white;
-  max-height: 30px;
-  min-height: 30px;
-  max-width: 200px;
+  font-size: 16px;
   margin: 5px;
+  max-height: 30px;
+  max-width: 200px;
+  min-height: 30px;
   min-width: 60px;
 }
 
-.input-container input:focus{ 
- border:none;	
- outline:none;
- border-bottom:1px solid #06ee89;	
+.input-container input:focus {
+  border: none;
+  border-bottom: 1px solid #06ee89;
+  outline: none;
 }
 
 button:disabled {
-  color: white;
-  border: none;
   background-color: #666665;
+  border: none;
   border-radius: 5px;
-  max-height: 40px;
-  min-height: 40px;
-  max-width: 83px;
-  min-width: 60px;
-  font-weight: 900;
+  color: white;
+  cursor: pointer;
   font-size: 15px;
+  font-weight: 900;
+  max-height: 40px;
+  max-width: 83px;
+  min-height: 40px;
+  min-width: 60px;
 }
 
 button:enabled {
-  color: #313131;
-  border: none;
   background-color: #06ee89;
+  border: none;
   border-radius: 5px;
-  max-height: 80px;
-  min-height: 40px;
-  max-width: 83px;
-  min-width: 60px;
-  font-weight: 900;
+  color: #313131;
+  cursor: pointer;
   font-size: 15px;
+  font-weight: 900;
+  max-height: 80px;
+  max-width: 83px;
+  min-height: 40px;
+  min-width: 60px;
 }

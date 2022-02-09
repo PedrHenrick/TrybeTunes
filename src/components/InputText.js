@@ -14,11 +14,13 @@ class InputText extends Component {
       <label htmlFor={ name }>
         { `${name}: ` }
         <input
+          className="inputProfileEdit"
           name={ name }
           type={ type }
           value={ value }
           data-testid={ data }
           onChange={ getValue }
+          autoComplete="off"
         />
       </label>
     );

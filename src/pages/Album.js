@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
@@ -55,23 +54,27 @@ class Album extends Component {
     const { album, music, songFav } = this.state;
     console.log(album);
     return (
-      <section>
-        <img
-          src={ album.artworkUrl100 }
-          alt={ `Foto do album ${album.collectionName}` }
-        />
-        <h3 data-testid="artist-name">{ album.artistName }</h3>
-        <h3 data-testid="album-name">{ album.collectionName }</h3>
-        { music.map((song) => (
-          <MusicCard
-            trackName={ song.trackName }
-            previewUrl={ song.previewUrl }
-            trackId={ parseInt(song.trackId, 10) }
-            checked={ songFav.some((favorite) => favorite.trackId === song.trackId) }
-            checkTheCheck={ this.checkTheCheck }
-            key={ parseInt(song.trackId, 10) }
+      <section className="songsContain">
+        <section className="albumCardClicked">
+          <img
+            src={ album.artworkUrl100 }
+            alt={ `Foto do album ${album.collectionName}` }
           />
-        ))}
+          <h3 className="artistName" data-testid="artist-name">{ album.artistName }</h3>
+          <h3 className="albumName" data-testid="album-name">{ album.collectionName }</h3>
+        </section>
+        <section className="songList">
+          { music.map((song) => (
+            <MusicCard
+              trackName={ song.trackName }
+              previewUrl={ song.previewUrl }
+              trackId={ parseInt(song.trackId, 10) }
+              checked={ songFav.some((favorite) => favorite.trackId === song.trackId) }
+              checkTheCheck={ this.checkTheCheck }
+              key={ parseInt(song.trackId, 10) }
+            />
+          ))}
+        </section>
       </section>
     );
   }
@@ -82,7 +85,6 @@ class Album extends Component {
       <div data-testid="page-album">
         <Header />
         { loading ? <Loading /> : this.renderPage() }
-        <Link to="/search">Voltar</Link>
       </div>
     );
   }

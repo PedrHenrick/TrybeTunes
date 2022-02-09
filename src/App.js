@@ -11,6 +11,10 @@ import './Styles/Header.css';
 import './Styles/Search.css';
 import './Styles/Login.css';
 import './Styles/Album.css';
+import './Styles/MusicAlbum.css';
+import './Styles/Favorites.css';
+import './Styles/Profile.css';
+import './Styles/ProfileEdit.css';
 
 class App extends React.Component {
   render() {

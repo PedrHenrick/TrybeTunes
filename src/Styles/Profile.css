@@ -1,0 +1,24 @@
+.profileDiv {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  text-align: center;
+}
+
+.imgProfile {
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+}
+
+.divElement {
+  align-items: center;
+  display: flex;
+}
+
+.infoUser {
+  color: #06ee89;
+  margin-left: 5px;
+}

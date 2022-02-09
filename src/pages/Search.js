@@ -42,11 +42,9 @@ class Search extends Component {
   renderAlbum = () => {
     const { valueAlbum, band, albums } = this.state;
     const successResult = (
-      <h2
-        className="messengerResult"
-      >
+      <h2 className="text">
         { 'Resultado de álbuns de: ' }
-        <span className="Result">{ band }</span>
+        { band }
       </h2>
     );
     const failResult = <h2 className="messengerResult">Nenhum álbum foi encontrado</h2>;

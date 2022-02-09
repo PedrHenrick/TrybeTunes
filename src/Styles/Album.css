@@ -8,26 +8,30 @@
 
 .AlbumsList {
   display: flex;
-  text-align: center;
   flex-wrap: wrap;
   justify-content: center;
   margin: 10px auto 13px;
+  text-align: center;
 }
 
-.albumCard{
+.albumCard {
   align-items: center;
+  background-color: #262626;
   border-radius: 15px;
+  color: white;
   display: flex;
   flex-direction: column;
   height: 300px;
   justify-content: center;
-  align-items: center;
   margin: 0 10px 15px 0;
+  text-decoration: none;
   width: 240px;
-  background-color: #262626;
 }
 
 .albumCard:hover {
+  box-shadow: 1px 1px 5px 5px #06ee89;
+  color: #06ee89;
+  cursor: pointer;
   padding: 5px;
-  box-shadow: 0px 0px 5px 5px #06ee89;
+  text-decoration: none;
 }

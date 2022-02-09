@@ -21,11 +21,25 @@ class Profile extends Component {
   renderPage = () => {
     const { userObj } = this.state;
     return (
-      <div>
-        <img src={ userObj.image } alt={ userObj.name } data-testid="profile-image" />
-        <h3>{ userObj.name }</h3>
-        <p>{ userObj.email }</p>
-        <p>{ userObj.description }</p>
+      <div className="profileDiv">
+        <img
+          className="imgProfile"
+          src={ userObj.image }
+          alt={ userObj.name }
+          data-testid="profile-image"
+        />
+        <div className="divElement">
+          <h3>Nome:</h3>
+          <h3 className="infoUser">{ userObj.name }</h3>
+        </div>
+        <div className="divElement">
+          <h3>Email:</h3>
+          <p className="infoUser">{ userObj.email }</p>
+        </div>
+        <div className="divElement">
+          <h3>Descrição:</h3>
+          <p className="infoUser">{ userObj.description }</p>
+        </div>
         <Link to="/profile/edit">
           <button
             type="button"
@@ -43,7 +57,6 @@ class Profile extends Component {
       <div data-testid="page-profile">
         <Header />
         { loading ? <Loading /> : this.renderPage() }
-        <Link to="/search">Voltar</Link>
       </div>
     );
   }

@@ -1,0 +1,93 @@
+.songsContain {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.albumCardClicked {
+  align-items: center;
+  background-color: #262626;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 5px #06ee89;
+  color: #06ee89;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 15px;
+  max-height: 270px;
+  max-width: 230px;
+  min-height: 270px;
+  min-width: 230px;
+  text-align: center;
+}
+
+.artistName {
+  margin: 5px;
+}
+
+.albumName {
+  margin: 5px;
+}
+
+.songList {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+label {
+  align-items: center;
+  display: flex;
+  margin-bottom: 7px;
+}
+
+.songUnity {
+  align-items: center;
+  background-color: #262626;
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px 3px #06ee89;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+  max-height: 130;
+  max-width: 320px;
+  min-height: 130px;
+  min-width: 320px;
+  text-align: center;
+}
+
+.titleSong {
+  color: #06ee89;
+  margin: 0;
+  margin-top: 7px;
+}
+
+audio {
+  padding: 10px;
+}
+
+label:hover {
+  color: #06ee89;
+}
+
+@media only screen and ( max-width : 640px ) {
+
+  .songsContain {
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .songList {
+    flex-direction: column;
+    width: none;
+  }
+
+  audio {
+    padding: 5px;
+  }
+
+}

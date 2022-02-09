@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Header from '../components/Header';
 import InputText from '../components/InputText';
 import Loading from '../components/Loading';
@@ -94,7 +94,7 @@ class ProfileEdit extends Component {
   renderPage = () => {
     const { Imagem, Nome, Email, Descrição, disable } = this.state;
     return (
-      <form>
+      <form className="formEdit">
         <InputText
           name="Imagem"
           type="text"
@@ -142,7 +142,6 @@ class ProfileEdit extends Component {
         <Header />
         { loading ? <Loading /> : this.renderPage() }
         { redirect && <Redirect to="/profile" />}
-        <Link to="/search">Voltar</Link>
       </div>
     );
   }

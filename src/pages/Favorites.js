@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../components/Loading';
@@ -32,7 +31,7 @@ class Favorites extends Component {
   renderPage = () => {
     const { songFav } = this.state;
     return (
-      <section>
+      <section className="favSection">
         { songFav.map((song) => (
           <MusicCard
             trackName={ song.trackName }
@@ -53,8 +52,6 @@ class Favorites extends Component {
       <div data-testid="page-favorites">
         <Header />
         { loading ? <Loading /> : this.renderPage() }
-        <Link to="/search">Voltar</Link>
-
       </div>
     );
   }
