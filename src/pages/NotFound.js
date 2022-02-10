@@ -16,3 +16,6 @@ class NotFound extends Component {
 }
 
 export default NotFound;
+
+// Referência:
+//  Todo a lógica atribuida a página foi retirada desse site: https://webdeasy.de/en/top-404-pages/
