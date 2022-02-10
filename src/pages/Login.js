@@ -38,14 +38,12 @@ class Login extends Component {
     });
   }
 
-  render() {
+  formPage = () => {
     const {
       Nome,
       disable,
-      loading,
-      redirect,
     } = this.state;
-    const form = (
+    return (
       <form className="form">
         <img
           src={ TrybeTunes }
@@ -76,9 +74,17 @@ class Login extends Component {
         </button>
       </form>
     );
+  }
+
+  render() {
+    const {
+      loading,
+      redirect,
+    } = this.state;
+
     return (
       <div data-testid="page-login" className="FormLoginConteiner">
-        { loading ? <Loading /> : form }
+        { loading ? <Loading /> : this.formPage() }
         { redirect && <Redirect to="/search" />}
       </div>
     );

@@ -24,9 +24,9 @@ class Header extends Component {
     });
   }
 
-  render() {
-    const { user, loading } = this.state;
-    const nav = (
+  navPage = () => {
+    const { user } = this.state;
+    return (
       <nav>
         <section className="headerTop">
           <div className="DivlogoTrybetunesHeader">
@@ -65,11 +65,14 @@ class Header extends Component {
         </section>
       </nav>
     );
+  }
 
+  render() {
+    const { loading } = this.state;
     const loadingElement = <h2 className="loadingConst">Carregando...</h2>;
     return (
       <header data-testid="header-component">
-        { loading ? loadingElement : nav }
+        { loading ? loadingElement : this.navPage() }
       </header>
     );
   }

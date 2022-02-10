@@ -15,6 +15,7 @@ import './Styles/MusicAlbum.css';
 import './Styles/Favorites.css';
 import './Styles/Profile.css';
 import './Styles/ProfileEdit.css';
+import './Styles/NotFound.css';
 
 class App extends React.Component {
   render() {

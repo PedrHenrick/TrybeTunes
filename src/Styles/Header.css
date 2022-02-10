@@ -108,8 +108,8 @@ nav {
 
 .loadingConst {
   align-items: center;
-  color: white;
   border-bottom: #313131 30px;
+  color: white;
   display: flex;
   justify-content: center;
   margin: 0;
